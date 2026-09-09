@@ -22,11 +22,27 @@ interface Mascotas {
     raza:string,
     sexo?:string,
     vacuna:boolean,
-    mostrarEdad()=>void
+    mostrarEdad:()=>void
 }
  
-funcion mostrarMascota(mascota:Mascotas,x:number){
-    mascota,edad+=x;
-    console.log(mascota);
+/* function mostrarMascota(mascota:Mascotas,x:number){
+     Mascotas.edad+=x;
+     console.log(mascota);
+     console.log(mascota.mostrarEdad())
+}*/
+ 
+function mostrarMascota(mascota:Mascotas,x:number):void{
     console.log(mascota.mostrarEdad())
 }
+ 
+const nuevaMascota:Mascotas={
+    nombre:"chewbacca",
+    edad:5,
+    raza:"de la calle",
+    vacuna:true,
+    mostrarEdad(){
+        console.log(`La edad de ${this.nombre} es ${this.edad}`)
+    }
+ 
+}
+mostrarMascota(nuevaMascota,2)
